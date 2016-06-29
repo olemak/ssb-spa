@@ -1,0 +1,191 @@
+/************************
+        MIXINS
+************************/
+
+$black 		: #171717;
+$white 		: #ffffff;
+$red  		: #351c30;
+$blue 		: #0059b3;
+$grey 		: #f6f6f6;
+$darkgrey 	: #cbcbcb;
+$lightgrey 	: #e0e0e0;
+
+
+
+/************************
+       HEADER/
+************************/
+
+header, thead {
+}
+header {
+//	position: fixed;
+//	background-color: $white;
+//	margin-bottom: 5rem;
+}
+/*
+thead {
+	top: 6.2rem;
+	left: 8rem;
+	.sortable:first-child {
+		visibility: hidden;
+		&:before {
+		}
+	}
+}
+*/
+#statsHeader {
+	select {
+		width: calc(100% - 0.4rem);
+		margin: 0.2rem;
+		text-align: center;
+		font-size: 3rem;
+		background-color: $black;
+		color: $white;
+		option {
+			background-color: $white;
+			color: $black;
+			font-size: 1.6rem;
+		}
+	}
+}
+
+
+/************************
+       OPTIONS
+************************/
+
+#options {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: baseline;
+		
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		font-family: verdana, arial, sans-serif;
+	form {
+		flex: 1 0 auto;
+
+		padding-right: 0.4rem;
+		animation: appear 2s;
+		input {
+			cursor: pointer;
+			width: 2.2rem;
+			height: 1.2rem;
+		}
+		&:nth-child(even){
+			text-align: right;
+		}
+	}
+}
+
+
+/************************
+       MAIN TABLE
+************************/
+
+#statsBrowser {
+	// THE SETTINGS, WHEN SHOWN
+	caption {
+		width: calc(100% - 0.4rem);
+		background-color: $darkgrey;
+		font-size: 1.2rem;
+		margin: 0 2px;
+		animation-name: appear;
+		animation-duration: 1s;
+		span {
+			visibility: hidden;
+		}
+		form {
+			fieldset {
+				width: 48%;
+				float: left;
+				margin-bottom: 1rem;
+				padding-top: 1rem;
+				min-height: 4rem;
+				select{
+					font-size: 1.2rem;
+				}
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	// SMALLER TEXT IF THE TABLE IS LARGE (WIDE)
+	&.wide > table{ 
+		font-size: 1rem;
+	}
+
+	// MAIN TABLE
+	.mainTable {
+		min-width: 100%;
+		font-size: 2rem;
+		text-align: left;
+		font-family: 'Helvetica Neue',Arial,freesans,sans-serif;
+		padding-right:2px;
+		.sortable {
+			background-color: $darkgrey;
+			color: $black;
+			cursor: pointer;
+			padding: 2px 4px;
+			text-align: right;
+
+		}
+		tbody {
+			tr {
+				background-color: $grey;			
+				&:nth-child(even) {
+					background-color: $white;
+				}
+				&:hover{
+					background-color: $black;
+					color: $white;
+					transition: background-color 1s, color 1s;
+				}
+				animation: appear 0.4s;
+			}
+			th, td {
+				padding: 2px 4px;
+				width: 14rem;
+			}
+			th {
+				color: $black;
+				background-color: ($darkgrey);
+			}
+			td {
+				text-align: right;
+				&:last-child {
+			//	width: auto;
+				}
+			}
+		}
+	}
+
+	.selected td {
+			background-color: lighten($blue, 40%);
+			transition: background-color 1s;
+	}
+
+
+	// TABLE FOOT (SOURCE)
+	tfoot {
+		text-align: left;
+		font-size: 1.2rem;
+		color: $darkgrey;
+		td {padding-top: 2rem;}
+	}
+}
+
+
+
+
+
+
+// ANIMATION KEYFRAMES
+@keyframes appear {
+	0% 		{ opacity: 0; }
+	100% 	{ opacity: 1; }
+}

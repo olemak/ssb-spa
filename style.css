@@ -1,0 +1,165 @@
+/************************
+        MIXINS
+************************/
+/************************
+       HEADER/
+************************/
+/*
+thead {
+	top: 6.2rem;
+	left: 8rem;
+	.sortable:first-child {
+		visibility: hidden;
+		&:before {
+		}
+	}
+}
+*/
+#statsHeader select {
+  width: calc(100% - 0.4rem);
+  margin: 0.2rem;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #171717;
+  color: #ffffff;
+}
+
+#statsHeader select option {
+  background-color: #ffffff;
+  color: #171717;
+  font-size: 1.6rem;
+}
+
+/************************
+       OPTIONS
+************************/
+#options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: verdana, arial, sans-serif;
+}
+
+#options form {
+  flex: 1 0 auto;
+  padding-right: 0.4rem;
+  animation: appear 2s;
+}
+
+#options form input {
+  cursor: pointer;
+  width: 2.2rem;
+  height: 1.2rem;
+}
+
+#options form:nth-child(even) {
+  text-align: right;
+}
+
+/************************
+       MAIN TABLE
+************************/
+#statsBrowser caption {
+  width: calc(100% - 0.4rem);
+  background-color: #cbcbcb;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  animation-name: appear;
+  animation-duration: 1s;
+}
+
+#statsBrowser caption span {
+  visibility: hidden;
+}
+
+#statsBrowser caption form fieldset {
+  width: 48%;
+  float: left;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  min-height: 4rem;
+}
+
+#statsBrowser caption form fieldset select {
+  font-size: 1.2rem;
+}
+
+#statsBrowser caption form fieldset p {
+  margin: 0;
+}
+
+#statsBrowser.wide > table {
+  font-size: 1rem;
+}
+
+#statsBrowser .mainTable {
+  min-width: 100%;
+  font-size: 2rem;
+  text-align: left;
+  font-family: 'Helvetica Neue',Arial,freesans,sans-serif;
+  padding-right: 2px;
+}
+
+#statsBrowser .mainTable .sortable {
+  background-color: #cbcbcb;
+  color: #171717;
+  cursor: pointer;
+  padding: 2px 4px;
+  text-align: right;
+}
+
+#statsBrowser .mainTable tbody tr {
+  background-color: #f6f6f6;
+  animation: appear 0.4s;
+}
+
+#statsBrowser .mainTable tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+#statsBrowser .mainTable tbody tr:hover {
+  background-color: #171717;
+  color: #ffffff;
+  transition: background-color 1s, color 1s;
+}
+
+#statsBrowser .mainTable tbody th, #statsBrowser .mainTable tbody td {
+  padding: 2px 4px;
+  width: 14rem;
+}
+
+#statsBrowser .mainTable tbody th {
+  color: #171717;
+  background-color: #cbcbcb;
+}
+
+#statsBrowser .mainTable tbody td {
+  text-align: right;
+}
+
+#statsBrowser .selected td {
+  background-color: #80bfff;
+  transition: background-color 1s;
+}
+
+#statsBrowser tfoot {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #cbcbcb;
+}
+
+#statsBrowser tfoot td {
+  padding-top: 2rem;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
