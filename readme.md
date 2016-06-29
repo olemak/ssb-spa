@@ -14,7 +14,7 @@ https://json-stat.com/
 https://github.com/badosa/JSON-stat
 
 ## Unique Selling Points:
-#SSB SPA is sortable!# Click the table headers to sort by column. And its bi-lingual (English and Norwegian).
+__SSB SPA is sortable!__ Click the table headers to sort by column. And its __bi-lingual__ (English and Norwegian).
 
 ## Usage
 Click the big, black header thingie up top to check out what datasets SSB has on tap. Select one.
